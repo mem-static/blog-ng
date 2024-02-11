@@ -99,12 +99,12 @@
 </tbody>
 </table>
 <p>在 data 段中可以定义变量和数组，对应语法如下：</p>
-<div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">data segment
-  s db &quot;Hello, World&quot; ; 字符串 char[13]
-  a dd 1, 2, 3, 4, 5  ; 数组 int[5]
-  b dw 0 dup(5)       ; 数组 short int[5]，初始值全为0
-  c db 0FFh;          ; 值为0FFh的字符 char
-  f dd 3.14           ; 值为3.14的浮点数 float
+<div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm">data segment
+  s db <span class="token string">"Hello, World"</span> <span class="token comment">; 字符串 char[13]</span>
+  a dd <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span>  <span class="token comment">; 数组 int[5]</span>
+  b dw <span class="token number">0</span> dup<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>       <span class="token comment">; 数组 short int[5]，初始值全为0</span>
+  c db 0FFh<span class="token comment">;          ; 值为0FFh的字符 char</span>
+  f dd <span class="token number">3.14</span>           <span class="token comment">; 值为3.14的浮点数 float</span>
 data ends</code></pre></div>
 <ul>
 <li>用 <code class="language-text">dup(数)</code> 来表示数组，用 <code class="language-text">?</code> 表示无初始值或初始值任意。</li>
