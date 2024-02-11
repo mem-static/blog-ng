@@ -111,15 +111,11 @@
 <h3 id="24-动态变量" style="position:relative;">2.4. 动态变量<a href="#24-%E5%8A%A8%E6%80%81%E5%8F%98%E9%87%8F" aria-label="24 动态变量 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>在进入函数体前，用 <code class="language-text">mov bp, sp</code> 暂存 SP 寄存器，通过 <code class="language-text">sub sp, 字节数</code> 划出分配给局部动态变量的内存空间。在函数体结束后，用 <code class="language-text">mov sp, bp</code> 指令恢复原来的 SP 寄存器即可。</p>
 <p>这样实现的话，一般通过 <code class="language-text">[bp+4/6/...]</code> 来访问函数参数，通过 <code class="language-text">[bp-2/4/...]</code> 来访问局部动态变量，具体可以参考示例代码。</p>
-<blockquote>
-<p>[!note]- 示例：实现 C 语言中的动态局部变量</p>
-<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<p><details  class="callout callout-type-note"><summary>示例：实现 C 语言中的动态局部变量</summary><p></p><div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">int</span> c<span class="token punctuation">;</span>       <span class="token comment">// c是局部动态变量</span>
       c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
       <span class="token keyword">return</span> c<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
-<p>把上面的C语言代码转化为汇编：</p>
-<div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">f:
+<span class="token punctuation">}</span></code></pre></div><p>把上面的C语言代码转化为汇编：</p><div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">f:
        push bp; (4)
        mov bp, sp
        sub sp, 2; (5) 这里挖的坑就是给变量c的
@@ -137,15 +133,12 @@ main:
        push ax; (2)
        call f; (3)
 here:
-   	add sp, 4;(9)此时参数a,b死亡</code></pre></div>
-<p>执行上述代码时，堆栈布局如下：</p>
-<div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">ss:1FF6 [30] (5) 变量c
+   	add sp, 4;(9)此时参数a,b死亡</code></pre></div><p>执行上述代码时，堆栈布局如下：</p><div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">ss:1FF6 [30] (5) 变量c
 ss:1FF8 old bp&lt;- bp(4)(6)
 ss:1FFA here &lt;- (3)(7)
 ss:1FFC 10 &lt;- (2)(8)
 ss:1FFE 20 &lt;- (1)
-ss:2000    &lt;-(9)</code></pre></div>
-</blockquote>
+ss:2000    &lt;-(9)</code></pre></div></details></p>
 <h2 id="3-中断程序设计" style="position:relative;">3. 中断程序设计<a href="#3-%E4%B8%AD%E6%96%AD%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" aria-label="3 中断程序设计 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>中断指令的格式 <code class="language-text">int n</code>，其中 n 的取值范围是 [0, 0FFh]。</p>
 <p>0:0 到 0:3FF 共 400h 内存空间存储中断向量表，初始由保存调用中断时需要跳转到的段地址和偏移地址（注意这里都是小端存储的），计算方法如下（如 <code class="language-text">dword ptr 0:[84h]</code> 就是 <code class="language-text">int 21h</code> 的中断向量）：</p>
