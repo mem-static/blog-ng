@@ -59,19 +59,19 @@
 <h2 id="2-函数" style="position:relative;">2. 函数<a href="#2-%E5%87%BD%E6%95%B0" aria-label="2 函数 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <h3 id="21-函数的定义" style="position:relative;">2.1. 函数的定义<a href="#21-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89" aria-label="21 函数的定义 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <h4 id="211-用标号定义函数" style="position:relative;">2.1.1. 用标号定义函数<a href="#211-%E7%94%A8%E6%A0%87%E5%8F%B7%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0" aria-label="211 用标号定义函数 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">标号名:  ; 定义近函数
-        ; 或写成“标号名 label near”
+<div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm">标号名:  <span class="token comment">; 定义近函数</span>
+        <span class="token comment">; 或写成“标号名 label near”</span>
   ...
-  retn  ; 可简写为ret
-标号名 label far  ; 定义远函数
+  retn  <span class="token comment">; 可简写为ret</span>
+标号名 label far  <span class="token comment">; 定义远函数</span>
   ...
   retf</code></pre></div>
 <h4 id="212-用-proc-定义函数" style="position:relative;">2.1.2. 用 proc 定义函数<a href="#212-%E7%94%A8-proc-%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0" aria-label="212 用 proc 定义函数 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">函数名 proc near  ; 定义近函数
+<div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm">函数名 proc near  <span class="token comment">; 定义近函数</span>
   ...
-  retn           ; 可简写为ret
+  retn           <span class="token comment">; 可简写为ret</span>
 函数名 endp
-函数名 proc far   ; 定义远函数
+函数名 proc far   <span class="token comment">; 定义远函数</span>
   ...
   retf
 函数名 endp</code></pre></div>
@@ -111,29 +111,29 @@
 <h3 id="24-动态变量" style="position:relative;">2.4. 动态变量<a href="#24-%E5%8A%A8%E6%80%81%E5%8F%98%E9%87%8F" aria-label="24 动态变量 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>在进入函数体前，用 <code class="language-text">mov bp, sp</code> 暂存 SP 寄存器，通过 <code class="language-text">sub sp, 字节数</code> 划出分配给局部动态变量的内存空间。在函数体结束后，用 <code class="language-text">mov sp, bp</code> 指令恢复原来的 SP 寄存器即可。</p>
 <p>这样实现的话，一般通过 <code class="language-text">[bp+4/6/...]</code> 来访问函数参数，通过 <code class="language-text">[bp-2/4/...]</code> 来访问局部动态变量，具体可以参考示例代码。</p>
-<p><details  class="callout callout-type-note"><summary>示例：实现 C 语言中的动态局部变量</summary><div><p></p><div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<p><details  class="callout callout-type-example"><summary>例：实现 C 语言中的动态局部变量</summary><div><p></p><div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">int</span> c<span class="token punctuation">;</span>       <span class="token comment">// c是局部动态变量</span>
       c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
       <span class="token keyword">return</span> c<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div><p>把上面的C语言代码转化为汇编：</p><div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">f:
-       push bp; (4)
-       mov bp, sp
-       sub sp, 2; (5) 这里挖的坑就是给变量c的
-       mov ax, [bp+4]
-       add ax, [bp+6]
-       mov [bp-2], ax
-       mov ax, [bp-2]
-       mov sp, bp; (6)此时变量c死亡
-       pop bp; (7)
-       ret; (8)
+<span class="token punctuation">}</span></code></pre></div><p>把上面的C语言代码转化为汇编：</p><div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm">f:
+       push bp<span class="token comment">; (4)</span>
+       mov bp<span class="token punctuation">,</span> sp
+       sub sp<span class="token punctuation">,</span> <span class="token number">2</span><span class="token comment">; (5) 这里挖的坑就是给变量c的</span>
+       mov ax<span class="token punctuation">,</span> <span class="token punctuation">[</span>bp<span class="token operator">+</span><span class="token number">4</span><span class="token punctuation">]</span>
+       add ax<span class="token punctuation">,</span> <span class="token punctuation">[</span>bp<span class="token operator">+</span><span class="token number">6</span><span class="token punctuation">]</span>
+       mov <span class="token punctuation">[</span>bp<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> ax
+       mov ax<span class="token punctuation">,</span> <span class="token punctuation">[</span>bp<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span>
+       mov sp<span class="token punctuation">,</span> bp<span class="token comment">; (6)此时变量c死亡</span>
+       pop bp<span class="token comment">; (7)</span>
+       ret<span class="token comment">; (8)</span>
 main:
-       mov ax, 20
-       push ax; (1)
-       mov ax, 10
-       push ax; (2)
-       call f; (3)
+       mov ax<span class="token punctuation">,</span> <span class="token number">20</span>
+       push ax<span class="token comment">; (1)</span>
+       mov ax<span class="token punctuation">,</span> <span class="token number">10</span>
+       push ax<span class="token comment">; (2)</span>
+       call f<span class="token comment">; (3)</span>
 here:
-   	add sp, 4;(9)此时参数a,b死亡</code></pre></div><p>执行上述代码时，堆栈布局如下：</p><div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">ss:1FF6 [30] (5) 变量c
+   	add sp<span class="token punctuation">,</span> <span class="token number">4</span><span class="token comment">;(9)此时参数a,b死亡</span></code></pre></div><p>执行上述代码时，堆栈布局如下：</p><div class="gatsby-highlight" data-language="plain"><pre class="language-plain"><code class="language-plain">ss:1FF6 [30] (5) 变量c
 ss:1FF8 old bp&lt;- bp(4)(6)
 ss:1FFA here &lt;- (3)(7)
 ss:1FFC 10 &lt;- (2)(8)
@@ -144,16 +144,16 @@ ss:2000    &lt;-(9)</code></pre></div></div></details></p>
 <p>0:0 到 0:3FF 共 400h 内存空间存储中断向量表，初始由保存调用中断时需要跳转到的段地址和偏移地址（注意这里都是小端存储的），计算方法如下（如 <code class="language-text">dword ptr 0:[84h]</code> 就是 <code class="language-text">int 21h</code> 的中断向量）：</p>
 <div class="math math-display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>int </mtext><mi>n</mi><mtext> 的偏移地址</mtext></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>0</mn><mo>:</mo><mo stretchy="false">[</mo><mi>n</mi><mo>×</mo><mn>4</mn><mo stretchy="false">]</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>int </mtext><mi>n</mi><mtext> 的段地址</mtext></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>0</mn><mo>:</mo><mo stretchy="false">[</mo><mi>n</mi><mo>×</mo><mn>4</mn><mo>+</mo><mn>2</mn><mo stretchy="false">]</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}\text{int }n\text{ 的偏移地址} &#x26;= 0:[n\times 4] \\
 \text{int }n\text{ 的段地址} &#x26;= 0:[n\times 4+2]\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">int </span></span><span class="mord mathnormal">n</span><span class="mord text"><span class="mord"> </span><span class="mord cjk_fallback">的偏移地址</span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">int </span></span><span class="mord mathnormal">n</span><span class="mord text"><span class="mord"> </span><span class="mord cjk_fallback">的段地址</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mclose">]</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">2</span><span class="mclose">]</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span></span></span></span></span></span></span></div>
-<div class="gatsby-highlight" data-language="asm"><pre class="language-asm"><code class="language-asm">1000:2000 int 21h ; 当CPU执行这条指令时，会做一下动作
+<div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm"><span class="token number">1000</span>:<span class="token number">2000</span> int 21h <span class="token comment">; 当CPU执行这条指令时，会做一下动作</span>
           pushf
-          push cs ; 即1000h
-          push 下条指令的偏移地址 ; 即2002h
-          jmp dword ptr 0:[21h*4] ; jmp mem32指令，假设存放着1234:5678
-1000:2002 mov ah, 4ch
+          push cs <span class="token comment">; 即1000h</span>
+          push 下条指令的偏移地址 <span class="token comment">; 即2002h</span>
+          jmp dword ptr <span class="token number">0</span>:<span class="token punctuation">[</span>21h<span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment">; jmp mem32指令，假设存放着1234:5678</span>
+<span class="token number">1000</span>:<span class="token number">2002</span> mov ah<span class="token punctuation">,</span> 4ch
 
-1234:5678 cmp ah, 9  ; 对应的中断函数从这里开始
-1234:567A ...
-1234:5688 iret ; 当CPU执行这条指令时，会做以下动作
+<span class="token number">1234</span>:<span class="token number">5678</span> cmp ah<span class="token punctuation">,</span> <span class="token number">9</span>  <span class="token comment">; 对应的中断函数从这里开始</span>
+<span class="token number">1234</span>:567A ...
+<span class="token number">1234</span>:<span class="token number">5688</span> iret <span class="token comment">; 当CPU执行这条指令时，会做以下动作</span>
           pop ip
           pop cs
           popf</code></pre></div>
