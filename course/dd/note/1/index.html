@@ -75,10 +75,13 @@
 </ul>
 <p><img src="https://static.memset0.cn/img/v6/2024/02/29/iwTGPXzI.png"alt="" style="width: 500px; " ></p>
 <ul>
-<li>图中 HIGH 和 LOW 的接受范围内存在一段 Threshold Region，落在这一部分的电平是<strong>未定义(undefined)</strong> 的，也被称为是<strong>浮动(floating)</strong> 的。如果输出的电平是在浮动区间的，那么其认定值将是随机的。</li>
+<li>图中 HIGH 和 LOW 的接受范围内存在一段 Threshold Region，落在这一部分的电平是<strong>未定义(undefined)</strong> 的，也被称为是<strong>浮动(floating)</strong> 的。如果输出的电平是在浮动区间的，那么其认定值将是随机的。
+<ul>
 <li>硬件层面上，一般通过<strong>晶体管(transistors)</strong> 来实现。</li>
 </ul>
-<p><details open disabled class="callout callout-type-important"><summary>宽进严出</summary><div><p>
+</li>
+</ul>
+<p><details open disabled class="callout callout-type-important"><summary>“宽进严出”规则</summary><div><p>
 <strong>输出时的接受范围会比输入时的略小一些</strong>。其目的是为了进一步提高电路在噪音等异常影响下也能正常表现的能力。</p></div></details></p>
 <p><details  class="callout callout-type-quote"><summary>Positive Logic</summary><div><p>
 事实上，在信息的对应上，虽然将高低电平同 HIGH/LOW 联系是很自然的，但是将他们同 true/false 或者 1/0 联系其实并不唯一。但是在一般情况下（我们称之为 positive logic），我们都认为 HIGH ~ true ~ 1， LOW ~ false ~ 0。</p></div></details></p>
