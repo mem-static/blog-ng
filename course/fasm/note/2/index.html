@@ -213,7 +213,7 @@ data ends</code></pre></div>
 <h4 id="anchor-f526ece8400ba861" style="position: relative;">2.4.5. 带进位循环移位 <code class="language-text">rcl</code>、<code class="language-text">rcr</code><a href="#anchor-f526ece8400ba861" aria-label="anchor f526ece8400ba861 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p>同样是循环移位操作，但会把 CF 标志看作其中一位参与运算（如被操作数宽度为 16 位，可看作一个长度为 17 的环）。</p>
 <h3 id="anchor-43f2a5b898a45436" style="position: relative;">2.5. 字符串操作与运算<a href="#anchor-43f2a5b898a45436" aria-label="anchor 43f2a5b898a45436 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
-<p><details  class="callout callout-type-note"><summary>[!note]- Fun Fact：C 语言中的三个关于字符串的库函数</summary><div class="callout-content"><p></p><ul>
+<p><details  class="callout callout-type-note"><summary> Fun Fact：C 语言中的三个关于字符串的库函数</summary><div class="callout-content"><p></p><ul>
 <li>
 <p>strcpy(target, source); 永远按正方向复制</p>
 </li>
@@ -268,7 +268,7 @@ done<span class="token operator">:</span></code></pre></div>
 <p>把 AL/AX/EAX 的值写入 ES:DI 指向的目标字符串中。</p>
 <h4 id="anchor-602c7c8c9a5bd954" style="position: relative;">2.5.5. 读取字符串指令 <code class="language-text">lodsb/w/d</code><a href="#anchor-602c7c8c9a5bd954" aria-label="anchor 602c7c8c9a5bd954 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
 <p>从 DS:SI 所指向的源字符串中读取一个 byte/word/double word 保存到 AL/AX/EAX。</p>
-<p><details  class="callout callout-type-example"><summary>[!example]- 例：用 lodsb、stosb 指令过滤掉字符串中的空格并存储到另一字符串中</summary><div class="callout-content"><p></p><div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm">data segment
+<p><details  class="callout callout-type-example"><summary> 例：用 lodsb、stosb 指令过滤掉字符串中的空格并存储到另一字符串中</summary><div class="callout-content"><p></p><div class="gatsby-highlight" data-language="armasm"><pre class="language-armasm"><code class="language-armasm">data segment
 s db <span class="token string">"Ada Lovelace is often regarded as "</span>
   db <span class="token string">"the first computer programmer."</span>
 slen <span class="token operator">=</span> $ <span class="token operator">-</span> offset s
