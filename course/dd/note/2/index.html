@@ -141,29 +141,11 @@ appearing just once in true or complemented form.</p>
 <h3 id="anchor-39adb6fa3201c229" style="position: relative;">3.3. 标准形式 Normal Form<a href="#anchor-39adb6fa3201c229" aria-label="anchor 39adb6fa3201c229 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>可以通过卡诺图化简得到<strong>积之和(sum-of-product, SOP)</strong> 或<strong>和之积(product-of-sum)</strong>。</p>
 <p>基于 SOP/POS（或者退一步的 SOM/POM）的电路被称为二级电路。二级电路与多级电路相比，好处是时延少，代价是使用的逻辑门多。</p>
-<h4 id="anchor-15084015b97dc855" style="position: relative;">3.3.1. “AND-OR” Simplification<a href="#anchor-15084015b97dc855" aria-label="anchor 15084015b97dc855 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<p>Two conditions：</p>
-<ol>
-<li>The number of product terms in expression is minimized</li>
-<li>With 1. satisfied, the number of literals in every product
-term is minimized</li>
-</ol>
-<h4 id="anchor-9e3ee7e1c6247559" style="position: relative;">3.3.2. “OR - AND” Simplification<a href="#anchor-9e3ee7e1c6247559" aria-label="anchor 9e3ee7e1c6247559 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
-<p>Two conditions:</p>
-<ol>
-<li>The number of sum terms in expression is minimized</li>
-<li>With 1. satisfied, the number of product terms in
-every sum term is minimized</li>
-</ol>
-<blockquote>
-<p>TBD</p>
-</blockquote>
-<p>Solution:</p>
-<ol>
-<li>Obtain the dual of “OR - AND” expression, which is “AND - OR” expression.</li>
-<li>Simplify the “AND - OR” expression</li>
-<li>Obtain the dual of simplified “AND - OR” expression again</li>
-</ol>
+<p>更多简化方法：</p>
+<ul>
+<li>“AND - OR” Simplification</li>
+<li>“OR - AND” Simplification</li>
+</ul>
 <h2 id="anchor-cbfd99cd43a4e3ce" style="position: relative;">4. 卡诺图 Karnaugh Maps<a href="#anchor-cbfd99cd43a4e3ce" aria-label="anchor cbfd99cd43a4e3ce permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <h3 id="anchor-41d8e37374f63022" style="position: relative;">4.1. 使用卡诺图化简 Simplifying using Karnaugh Maps<a href="#anchor-41d8e37374f63022" aria-label="anchor 41d8e37374f63022 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>以利用三变量<strong>卡诺图(karnaugh map, K-map)</strong> 求 SOP 为例：将 F 所有为 1 的最小项填入表中，可以得到对应的卡诺图。如果要求 POS，则可先求 SOP，再应用一次德摩根定律转为 POS。</p>

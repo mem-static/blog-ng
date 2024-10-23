@@ -41,12 +41,12 @@
 <li>数字系统(digital system)</li>
 <li><strong>模拟信号(analog signal)</strong></li>
 <li><strong>逻辑运算(logical operator)</strong></li>
-<li>波形图(waveform)</li>
+<li><strong>波形图(waveform)</strong></li>
 <li>中央处理单元(Central Processing Unit, CPU)</li>
 <li>数字信号处理器(Digital Signal Processor, DSP)</li>
 <li><strong>嵌入式系统(embedded system)</strong></li>
 <li>处理器(processor)</li>
-<li>最高有效位(most significant digit, MSD)</li>
+<li><strong>最高有效位(most significant digit, MSD)</strong></li>
 </ul></div></details></p>
 <h2 id="anchor-4090c85699954230" style="position: relative;">1. 数字系统 Digital Systems<a href="#anchor-4090c85699954230" aria-label="anchor 4090c85699954230 permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <h3 id="anchor-8f5440fe0c63395c" style="position: relative;">1.1. 信息表达 Information Representation<a href="#anchor-8f5440fe0c63395c" aria-label="anchor 8f5440fe0c63395c permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
@@ -62,12 +62,12 @@
 </ul>
 <p><img src="https://static.memset0.cn/img/v6/2024/02/29/iwTGPXzI.png"alt="" style="width: 500px; " ></p>
 <ul>
-<li>HIGH 和 LOW 是噪声容限，TBD。</li>
-<li>图中 HIGH 和 LOW 的接受范围内存在一段 threshold region，落在这一部分的电平是<strong>未定义(undefined)</strong>  的，也被称为是<strong>浮动(floating)</strong>  的。如果输出的电平是在浮动区间的，那么其认定值将是随机的。</li>
+<li>HIGH 和 LOW 是噪声容限。</li>
+<li>图中 HIGH 和 LOW 的接受范围内存在一段阈值区间，落在这一部分的电平是<strong>未定义(undefined)</strong>  的，也被称为是<strong>浮动(floating)</strong>  的。如果输出的电平是在浮动区间的，那么其认定值将是随机的。</li>
 <li>硬件层面上，将模拟信号转化为数字信号的工作一般通过<strong>晶体管(transistors)</strong>  实现。</li>
 </ul>
 <p><details open disabled class="callout callout-type-important"><summary> “宽进严出”规则</summary><div class="callout-content"><p>
-<strong>输出时的接受范围会比输入时的略小一些</strong>。其目的是为了进一步提高电路在噪音等异常影响下也能正常表现的能力。</p></div></details></p>
+<mark class="m-mark">输出时的接受范围会比输入时的略小一些</mark>。其目的是为了进一步提高电路在噪音等异常影响下也能正常表现的能力。</p></div></details></p>
 <p><details  class="callout callout-type-quote"><summary> Positive Logic</summary><div class="callout-content"><p>
 事实上，在信息的对应上，虽然将高低电平同 HIGH/LOW 联系是很自然的，但是将他们同 true/false 或者 1/0 联系其实并不唯一。但是在一般情况下（我们称之为 positive logic），我们都认为 HIGH ~ true ~ 1， LOW ~ false ~ 0。</p></div></details></p>
 <h3 id="anchor-774eb4c4cc23ba6e" style="position: relative;">1.2. 逻辑系统 Logic System<a href="#anchor-774eb4c4cc23ba6e" aria-label="anchor 774eb4c4cc23ba6e permalink" class="anchor after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
