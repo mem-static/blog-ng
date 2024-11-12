@@ -56,10 +56,10 @@
 <li>constant node feature：给所有点赋相同常量作为特征。所有点的特征是相同的，但是 GNN 仍然可以从图结构中学到信息。</li>
 <li>one-hot node feature：给每个点分配编号，并编码成 one-hot 向量。</li>
 </ul>
-<p><img src="https://static.memset0.cn/img/v6/2024/08/30/o2smfZD7.png"alt="o2smfZD7.png" style="width: 603px; " ></p>
+<p><img src="https://img.memset0.cn/2024/08/30/o2smfZD7.png"alt="o2smfZD7.png" style="width: 603px; " ></p>
 <h3 id="anchor-9099aad53b9af579" style="position: relative;"><a href="#anchor-9099aad53b9af579" aria-label="anchor 9099aad53b9af579 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2. GNN 难以学习特定图结构</h3>
 <p>多元环的计算图都是二叉树，无法进行区分。类似的问题在特定图结构上也会出现。</p>
-<p><img src="https://static.memset0.cn/img/v6/2024/08/30/74MVmsYr.png"alt="74MVmsYr.png" style="width: 600px; " ></p>
+<p><img src="https://img.memset0.cn/2024/08/30/74MVmsYr.png"alt="74MVmsYr.png" style="width: 600px; " ></p>
 <p>需要把此类图结构特征给编码到节点当中（可以加一维也可以是添加一个 one-hot 向量）。常用的有：</p>
 <ul>
 <li>cycle count（所在环的大小）</li>

@@ -47,10 +47,10 @@
 </ul>
 <h2 id="anchor-047e1068dfbae0b4" style="position: relative;"><a href="#anchor-047e1068dfbae0b4" aria-label="anchor 047e1068dfbae0b4 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ch03 Linear Structures</h2>
 <h3 id="anchor-3732af0afd27243a" style="position: relative;"><a href="#anchor-3732af0afd27243a" aria-label="anchor 3732af0afd27243a permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Queue</h3>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/V1qGNkCJ.png"alt="V1qGNkCJ.png" style="width: 647px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/V1qGNkCJ.png"alt="V1qGNkCJ.png" style="width: 647px; " ></p>
 <p>初始状态 <code class="language-text">front == 0</code>，<code class="language-text">rear == -1</code>。</p>
 <h3 id="anchor-a25233244b568e25" style="position: relative;"><a href="#anchor-a25233244b568e25" aria-label="anchor a25233244b568e25 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Circular Queue</h3>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/HPy8ki5c.png"alt="HPy8ki5c.png" style="width: 338px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/HPy8ki5c.png"alt="HPy8ki5c.png" style="width: 338px; " ></p>
 <p>这种实现要求至少留一个空位置。</p>
 <ul>
 <li>初始状态：<code class="language-text">front = 1</code>，<code class="language-text">rear == 0</code>（需要相差 1）</li>
@@ -117,19 +117,19 @@
 <li>随机选取：但是生成随机数的代价比较高。</li>
 <li>Median-of-Three Partitioning：从左边、中间、右边的三个数中选一个中位数来当 pivot。</li>
 </ul>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/7KT30VFI.png"alt="7KT30VFI.png" style="width: 552px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/7KT30VFI.png"alt="7KT30VFI.png" style="width: 552px; " ></p>
 <p>需要注意的细节：</p>
 <ul>
 <li><code class="language-text">A[Left]</code>、<code class="language-text">A[Center]</code>、<code class="language-text">A[Right]</code> 在这里就已经排序。</li>
 <li>把 pivot 放在 <code class="language-text">A[Right - 1]</code> 的位置。</li>
 <li>只需要对 <code class="language-text">A[Left + 1]</code> 到 <code class="language-text">A[Right - 2]</code> 的部分进行排序。</li>
 </ul>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/7yEdVvWP.png"alt="7yEdVvWP.png" style="width: 621px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/7yEdVvWP.png"alt="7yEdVvWP.png" style="width: 621px; " ></p>
 <h3 id="anchor-cac7fc340f3f3e2e" style="position: relative;"><a href="#anchor-cac7fc340f3f3e2e" aria-label="anchor cac7fc340f3f3e2e permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Radix Sort</h3>
 <p>Least Significant Digit：低位到高位排序。每次桶排完按顺序合并成一条队列，然后继续 radix sort。
 Most Significant Digit：高位到低位排序。每次桶排完对每个桶分别继续应用排序算法。</p>
 <h2 id="anchor-64e0f8ec186def47" style="position: relative;"><a href="#anchor-64e0f8ec186def47" aria-label="anchor 64e0f8ec186def47 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ch07 Hashing</h2>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/HWRyGLbv.png"alt="HWRyGLbv.png" style="width: 268px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/HWRyGLbv.png"alt="HWRyGLbv.png" style="width: 268px; " ></p>
 <ul>
 <li>
 <p><strong>标识符密度(identifier density)</strong>：<span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>n</mi><mi>T</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\dfrac{n}{T}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>。</p>
@@ -195,7 +195,7 @@ Most Significant Digit：高位到低位排序。每次桶排完对每个桶分�
 <p>对于同时应用了 union-by-rank 和 path compression 的并查集，其 find 操作的时间复杂度是 <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\alpha(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></span> 的。</p>
 <h2 id="anchor-cc502d8a13b43a8c" style="position: relative;"><a href="#anchor-cc502d8a13b43a8c" aria-label="anchor cc502d8a13b43a8c permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ch09 Graphs</h2>
 <h3 id="anchor-e217fdae883a194d" style="position: relative;"><a href="#anchor-e217fdae883a194d" aria-label="anchor e217fdae883a194d permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Graph Terminologies</h3>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/ZszVmCL4.png"alt="ZszVmCL4.png" style="width: 452px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/ZszVmCL4.png"alt="ZszVmCL4.png" style="width: 452px; " ></p>
 <p>表示图的方法：</p>
 <ul>
 <li>
@@ -227,13 +227,13 @@ Most Significant Digit：高位到低位排序。每次桶排完对每个桶分�
 </ul></div></details></p>
 <h3 id="anchor-d22b92df2c4ac60f" style="position: relative;"><a href="#anchor-d22b92df2c4ac60f" aria-label="anchor d22b92df2c4ac60f permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network Flow</h3>
 <p>原图、流量网络、残量网络：</p>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/JqjrvJZe.png"alt="JqjrvJZe.png" style="width: 543px; " ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/JqjrvJZe.png"alt="JqjrvJZe.png" style="width: 543px; " ></p>
 <h3 id="anchor-ec3af07ac71b554c" style="position: relative;"><a href="#anchor-ec3af07ac71b554c" aria-label="anchor ec3af07ac71b554c permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Biconnected Components</h3>
 <ul>
 <li><strong>关节点(articulation point)</strong>：割点</li>
 <li><strong>双联通分量(biconnected component)</strong>：（点）双联通分量，可能有一个点在多个双联通分量内。每个双联通分量是一个极大的不存在割点的联通子图。</li>
 </ul>
-<p><img src="https://static.memset0.cn/img/v6/2024/06/27/hxaVC1OY.png"alt="" ></p>
+<p><img src="https://img.memset0.cn/2024/06/27/hxaVC1OY.png"alt="" ></p>
 <p>用 Tarjan 算法找点双的方法：</p>
 <ul>
 <li><span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mi>m</mi><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Num(u)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span></span></span></span></span> 记录访问到这个点的时间戳。</li>
