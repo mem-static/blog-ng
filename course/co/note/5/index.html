@@ -41,13 +41,13 @@
 <ul>
 <li><strong>静态随机访问存储器(Static Random Access Memory, SRAM)</strong>：
 <ul>
-<li>数据存储在晶体管中（通常用 6-8 个晶体管表示一个位），无需刷新</li>
+<li>数据存储在晶体管中（通常用 6-8 个晶体管表示一个位），无需刷新。</li>
 <li>读写速度快，但是空间（指占用的物理空间）占用高。</li>
 </ul>
 </li>
 <li><strong>动态随机访问存储器(Dynamic Random Access Memory, DRAM)</strong>：
 <ul>
-<li>数据存储在电容中，需要定期刷新</li>
+<li>数据存储在电容中，需要定期刷新。</li>
 <li>读写速度慢（一般是 SRAM 的 5-10 倍），但是空间占用低。</li>
 </ul>
 </li>
@@ -62,7 +62,7 @@
 </ul>
 <p>利用好这些性质，我们可以设计 cache 来在合理成本的代价下大幅优化对内存的读写速度。</p>
 <h3 id="anchor-53cbdaa220bf2bd2" style="position: relative;"><a href="#anchor-53cbdaa220bf2bd2" aria-label="anchor 53cbdaa220bf2bd2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1. Cache Mapping Strategies</h3>
-<p><img src="https://img.memset0.cn/2024/12/09/XQHOmHlB.png"alt="" style="width: 559px; " ></p>
+<p><img src="https://img.memset0.cn/2024/12/09/XQHOmHlB.png"alt="" style="width: 522px; " ></p>
 <table>
 <thead>
 <tr>
@@ -100,7 +100,7 @@
 <p>如上图所示：memory 有 <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>5</mn></msup><mo>=</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">2^{5} = 32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">32</span></span></span></span></span> 个 block，cache 有 <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">2^{3}=8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span></span> 个 block，直接根据 memory 地址的低 3 位作为 cache 地址。我们将这个低 3 位称为 <strong>索引(index)</strong>。</p>
 <p>为了知道 cache 中实际存放的到底是 memory 中的哪个 block，我们在 cache 中还需要存储 memory 地址的高几位（上图中就是高 2 位）。我们将这个高 2 位成为 <strong>标签(tag)</strong>。</p>
 <p>另外，我们需要一个 <strong>有效位(valid bit)</strong> 来判断 cache 中存储的这个 block 是否是有效的。初始时全部无效，valid bit 为 0；当从内存中取出一个 block 后，就变成有效的了，valid bit 为 1。cache hit 当且仅当 valid bit 为 1 且 tag 与目标地址一致。</p>
-<p><img src="https://img.memset0.cn/2024/12/09/PTUhlfoQ.png"alt="" style="width: 432px; " ></p>
+<p><img src="https://img.memset0.cn/2024/12/09/PTUhlfoQ.png"alt="" style="width: 398px; " ></p>
 <ul>
 <li>tag：用于标识对应内存块的唯一性</li>
 <li>index：用于定位缓存中块的位置</li>
