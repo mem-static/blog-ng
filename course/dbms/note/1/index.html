@@ -47,7 +47,7 @@
 <li><strong>数据孤立(data isolation)</strong>：数据分布在多个文件中，不同的文件可能有不同的格式。</li>
 <li><strong>数据访问(data accessing)</strong> 困难：每次都需要编写新的程序处理新的修改或查询任务。</li>
 <li><strong>完整性问题(integrity problem)</strong>：约束条件通常被嵌入在程序代码中，而不是直接存储在数据库中。这通常导致很难新增新的约束或修改现有的约束条件。</li>
-<li><strong>原子性问题(atomicity problem)</strong>：失败可能会导致数据库处于 <strong>不一致状态(inconsistent state)</strong>，其中某些更新被执行，而另一些未被执行。（理想状态是一个数据库事务要么全部执行，要么完全不执行。）</li>
+<li><strong>原子性问题(atomicity problem)</strong>：对于一个数据库事务，要么全部执行，要么完全不执行，失败可能会导致数据库处于 <strong>不一致状态(inconsistent state)</strong></li>
 <li><strong>并发访问异常(concurrent access anomaly)</strong>：需要允许数据库并发访问以提升性能，但如果并发访问未受控制，可能会导致数据不一致。</li>
 <li><strong>安全性问题(security problem)</strong>：难以仅向特定用户提供部分数据的访问权限，同时又保证其他数据的安全性。
 <ul>
