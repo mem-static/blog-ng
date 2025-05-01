@@ -182,20 +182,48 @@
 <ul>
 <li>使用 <strong>调度(scheduling)</strong> 优化本节实例代码，可以减少一个时钟周期的停顿．</li>
 </ul>
-<p>+——————————————————————————————————————----+——————————————————————————————————————----+
-| <strong>调度前</strong> | <strong>调度后</strong> |
-+======================================================================================================================+======================================================================================================================+
-| <img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-21-28.png" style="width: calc(0.6 * 50em)"> | <img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-21-43.png" style="width: calc(0.6 * 50em)"> |
-+——————————————————————————————————————----+——————————————————————————————————————----+</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th><p><strong>调度前</strong></p></th>
+<th><p><strong>调度后</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-21-28.png" style="width: calc(0.6 * 50em)"></p></td>
+<td><p><img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-21-43.png" style="width: calc(0.6 * 50em)"></p></td>
+</tr>
+</tbody>
+</table>
 <h3 id="anchor-d9e73448a61283d0" style="position: relative;"><a href="#anchor-d9e73448a61283d0" aria-label="anchor d9e73448a61283d0 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.2. Loop Unrolling | 循环展开</h3>
 <ul>
 <li>使用 <strong>循环展开(loop unrolling)</strong> 并进行调度，可以进一步减少每次迭代的平均周期数．</li>
 </ul>
-<p>+————————————————————————————————————————————————-+————————————————————————————————————————————————+
-| <strong>循环展开四次的结果</strong> | <strong>循环展开四次并调度的结果</strong> |
-+=================================================================================================================================================+================================================================================================================================================+
-| 平均每循环 6.5 个时钟周期 <img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-24-10.png" style="width: 100%"> | 平均每循环 3.5 个时钟周期 <img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-24-18.png" style="width: calc(0.6 * 50em)"> |
-+————————————————————————————————————————————————-+————————————————————————————————————————————————+</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th><p><strong>循环展开四次的结果</strong></p></th>
+<th><p><strong>循环展开四次并调度的结果</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>平均每循环 6.5 个时钟周期
+<img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-24-10.png" style="width: 100%"></p></td>
+<td><p>平均每循环 3.5 个时钟周期
+<img src="https://course.cdn.memset0.cn/ca/notes/images/2025-05-01-00-24-18.png" style="width: calc(0.6 * 50em)"></p></td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>
 <p>这里假设了迭代次数是 <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></span> 的倍数，如果不是的话需要再后面再补上单迭代的循环，以确保总迭代次数不变．</p>
